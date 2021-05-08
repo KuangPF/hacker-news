@@ -1,5 +1,8 @@
 @layer components {
   .header-link {
-    @apply inline-block align-middle font-light tracking-widest mr-7 text-white text-opacity-80 text-base leading-6;
+    @apply inline-block align-middle font-light tracking-wider mr-7 text-white text-opacity-80 text-base leading-6;
+  }
+  .header-link-active {
+    @apply font-normal text-opacity-100
   }
 }
