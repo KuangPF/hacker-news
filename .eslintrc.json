@@ -39,6 +39,9 @@
     "semi": ["error", "never"],
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "react/react-in-jsx-scope": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off"
   }
 }
