@@ -8,8 +8,10 @@ const CommonHeader = props => {
   return (
     <header className="fixed z-999 t-0 left-0 right-0 h-14 bg-color-scale-yellow-4">
       <nav className="max-w-screen-md mt-0 mb-0 mr-auto ml-auto pt-4 pb-4">
-        <Link href="/">
-          <img className="w-6 header-link" src="/assets/logo-48.png" alt="logo" />
+        <Link href="/top">
+          <a>
+            <img className="w-6 header-link" src="/assets/logo-48.png" alt="logo" />
+          </a>
         </Link>
         <Link href="/top">
           <a className={getLinkClass('/top')}>Top</a>
