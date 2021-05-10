@@ -8,9 +8,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html data-color-mode='light'> 
+      <Html data-color-mode="light">
         <Head />
-        <body>
+        <body className="pt-14">
           <Main />
           <NextScript />
         </body>

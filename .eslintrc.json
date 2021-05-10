@@ -38,6 +38,7 @@
   "rules": {
     "semi": ["error", "never"],
     "import/no-unresolved": [2, { "caseSensitive": false }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "arrow-body-style": "off",
     "jsx-a11y/anchor-is-valid": "off",
@@ -45,6 +46,8 @@
     "react/prop-types": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
-    "quote-props": "off"
+    "quote-props": "off",
+    "object-curly-newline": "off",
+    "no-bitwise": ["error", { "allow": ["~"] }]
   }
 }
