@@ -44,6 +44,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "arrow-parens": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "quote-props": "off"
   }
 }

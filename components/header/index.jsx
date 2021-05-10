@@ -6,7 +6,7 @@ const CommonHeader = props => {
   const getLinkClass = useCallback(type => `header-link ${pathname === type ? 'header-link-active' : ''}`, [pathname])
 
   return (
-    <header className="fixed z-999 t-0 left-0 right-0 h-14 bg-color-scale-yellow-4">
+    <header className="fixed z-20 t-0 left-0 right-0 h-14 bg-color-scale-yellow-4">
       <nav className="max-w-screen-md mt-0 mb-0 mr-auto ml-auto pt-4 pb-4">
         <Link href="/top">
           <a>
