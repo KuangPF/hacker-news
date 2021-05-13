@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import CommonHeader from 'components/header'
 import Link from 'next/link'
+import { fetchIdsByTypeAction } from 'store/actions'
 import { useRouter } from 'next/router'
 import Item from 'components/item'
 
@@ -7,6 +10,17 @@ export default function Home() {
   const {
     query: { type = [] }
   } = useRouter()
+  const dispatch = useDispatch()
+
+  const idsByType = useSelector(state => state.idsByType)
+  console.log(idsByType)
+
+  useEffect(() => {
+    if (type[0]) {
+      console.log('dispatch')
+      dispatch(fetchIdsByTypeAction(type[0]))
+    }
+  }, [dispatch, type])
 
   return (
     <div>

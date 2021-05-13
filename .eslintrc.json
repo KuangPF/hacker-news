@@ -39,6 +39,8 @@
     "semi": ["error", "never"],
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "function-paren-newline": "off",
     "react/react-in-jsx-scope": "off",
     "arrow-body-style": "off",
     "jsx-a11y/anchor-is-valid": "off",
@@ -48,6 +50,10 @@
     "comma-dangle": "off",
     "quote-props": "off",
     "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-console": "off",
     "no-bitwise": ["error", { "allow": ["~"] }]
   }
 }
