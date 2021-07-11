@@ -5,7 +5,7 @@ const Item = props => {
   const { item = {} } = props
   return (
     <div className="flex items-center p-5 pl-0 bg-white border-b border-gray-200 border-solid">
-      <div className="font-bold text-hacker-news-base text-xl w-20 text-center">{item.score}</div>
+      <div className="font-bold text-hacker-news-base text-xl w-20 text-center text-color-scale-yellow-4">{item.score}</div>
       <div className="ml-5">
         <span>
           <a href={item.url} className="text-gray-700 _blank">
