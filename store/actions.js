@@ -27,13 +27,16 @@ export const fetchItemsData = (newsType, page) => (dispatch, getState) => {
         type: types.SET_ITEMS,
         payload: { items: _items }
       })
-    }
-    )
+    })
   }
   return Promise.resolve()
 }
 
 export const fetchListData = (newsType, page) => dispatch => {
+  dispatch({
+    type: types.SET_ACTIVE_TYPE,
+    payload: { newsType }
+  })
   return fetchIdsByType(newsType)
     .then(ids =>
       dispatch({

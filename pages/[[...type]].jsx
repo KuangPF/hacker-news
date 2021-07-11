@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CommonHeader from 'components/header'
 import Link from 'next/link'
@@ -6,22 +6,39 @@ import { fetchListData } from 'store/actions'
 import { useRouter } from 'next/router'
 import Item from 'components/item'
 
+const itemsPerPage = 20
+
 export default function Home() {
+  const { activeType, ids, items } = useSelector(_state => _state)
   const {
     query: { type = [] }
   } = useRouter()
+
+  const page = type[1] || 1
+
+  // displayedItems
+  const getdDisplayedItems = useCallback(() => {
+    if (!activeType || !ids[activeType]) {
+      return []
+    }
+    const start = (page - 1) * itemsPerPage
+    const end = page * itemsPerPage
+    const avtiveIds = ids[activeType].slice(start, end)
+    return avtiveIds.map(id => items[id]).filter(_ => _)
+  }, [activeType, ids, page, items])
+
   const dispatch = useDispatch()
 
-  const items = useSelector(state => state.items)
-  console.log(Object.keys(items))
+  console.log(getdDisplayedItems())
 
   useEffect(() => {
     if (type[0]) {
       console.log('dispatch')
-      dispatch(fetchListData(type[0], type[1] || 1))
+      dispatch(fetchListData(type[0], page))
     }
-  }, [dispatch, type])
+  }, [dispatch, type, page])
 
+  const displayedItems = getdDisplayedItems()
   return (
     <div>
       <CommonHeader pathname={`/${type.join('/')}`} />
@@ -36,7 +53,9 @@ export default function Home() {
           </Link>
         </div>
         <div className="new-list absolute my-8 w-full bg-white rounded">
-          <Item />
+          {displayedItems.map(item => (
+            <Item item={item} key={item.id} />
+          ))}
         </div>
       </div>
     </div>

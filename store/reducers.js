@@ -32,9 +32,20 @@ const itemsReducer = (state = {}, { type, payload = {} }) => {
   }
 }
 
+const activeTypeReducer = (state = null, { type, payload = {} }) => {
+  const { newsType } = payload
+  switch (type) {
+    case types.SET_ACTIVE_TYPE:
+      return newsType
+    default:
+      return state
+  }
+}
+
 const reducers = {
   items: itemsReducer,
-  ids: fetchIdsByTypeReducer
+  ids: fetchIdsByTypeReducer,
+  activeType: activeTypeReducer
 }
 
 export default combineReducers(reducers)
