@@ -9,7 +9,8 @@ import Item from 'components/item'
 const itemsPerPage = 20
 
 export default function Home() {
-  const { activeType, ids, items } = useSelector(_state => _state)
+  const { activeType, ids, items, apiLoading } = useSelector(_state => _state)
+  const dispatch = useDispatch()
   const {
     query: { type = [] }
   } = useRouter()
@@ -26,8 +27,6 @@ export default function Home() {
     const avtiveIds = ids[activeType].slice(start, end)
     return avtiveIds.map(id => items[id]).filter(_ => _)
   }, [activeType, ids, page, items])
-
-  const dispatch = useDispatch()
 
   console.log(getdDisplayedItems())
 
@@ -52,11 +51,15 @@ export default function Home() {
             <a className="mx-4">more &gt;</a>
           </Link>
         </div>
-        <div className="new-list absolute my-8 w-full bg-white rounded">
-          {displayedItems.map(item => (
-            <Item item={item} key={item.id} />
-          ))}
-        </div>
+        {apiLoading ? (
+          <p>loading...</p>
+        ) : (
+          <div className="new-list absolute my-8 w-full bg-white rounded">
+            {displayedItems.map(item => (
+              <Item item={item} key={item.id} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

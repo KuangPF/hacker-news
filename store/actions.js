@@ -37,6 +37,10 @@ export const fetchListData = (newsType, page) => dispatch => {
     type: types.SET_ACTIVE_TYPE,
     payload: { newsType }
   })
+  dispatch({
+    type: types.SET_API_LOADING,
+    payload: true
+  })
   return fetchIdsByType(newsType)
     .then(ids =>
       dispatch({
@@ -46,5 +50,11 @@ export const fetchListData = (newsType, page) => dispatch => {
     )
     .then(() => {
       dispatch(fetchItemsData(newsType, page))
+    })
+    .then(() => {
+      dispatch({
+        type: types.SET_API_LOADING,
+        payload: false
+      })
     })
 }

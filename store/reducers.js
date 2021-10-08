@@ -42,10 +42,21 @@ const activeTypeReducer = (state = null, { type, payload = {} }) => {
   }
 }
 
+// api loading
+const apiLoadingReducer = (state = null, { type, payload = false }) => {
+  switch (type) {
+    case types.SET_API_LOADING:
+      return payload
+    default:
+      return state
+  }
+}
+
 const reducers = {
   items: itemsReducer,
   ids: fetchIdsByTypeReducer,
-  activeType: activeTypeReducer
+  activeType: activeTypeReducer,
+  apiLoading: apiLoadingReducer
 }
 
 export default combineReducers(reducers)
