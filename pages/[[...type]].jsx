@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { fetchListData } from 'store/actions'
 import { useRouter } from 'next/router'
 import Item from 'components/item'
+import Loading from 'components/loading'
 
 const itemsPerPage = 20
 
@@ -51,8 +52,8 @@ export default function Home() {
             <a className="mx-4">more &gt;</a>
           </Link>
         </div>
-        {apiLoading ? (
-          <p>loading...</p>
+        {true ? (
+          <Loading />
         ) : (
           <div className="new-list absolute my-8 w-full bg-white rounded">
             {displayedItems.map(item => (
