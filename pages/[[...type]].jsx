@@ -52,8 +52,10 @@ export default function Home() {
             <a className="mx-4">more &gt;</a>
           </Link>
         </div>
-        {true ? (
-          <Loading />
+        {apiLoading ? (
+          <div className="mt-5 text-center">
+            <Loading />
+          </div>
         ) : (
           <div className="new-list absolute my-8 w-full bg-white rounded">
             {displayedItems.map(item => (

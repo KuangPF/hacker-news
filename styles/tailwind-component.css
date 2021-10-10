@@ -6,6 +6,6 @@
     @apply font-normal text-opacity-100
   }
   .loading-div-children  {
-    @apply box-border absolute w-14 h-14 border-8 border-color-scale-yellow-4 border-solid rounded-3xl
+    @apply box-border absolute w-12 h-12 border-4 border-color-scale-yellow-4 border-solid rounded-full animate-ring
   }
 }
