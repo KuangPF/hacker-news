@@ -25,7 +25,6 @@ const itemsReducer = (state = {}, { type, payload = {} }) => {
           _state[item.id] = item
         }
       })
-      console.log(_state)
       return cloneDeep(_state)
     default:
       return state
