@@ -1,6 +1,6 @@
 ## Hacker News
 
-HackerNews clone built with Next.js, Deploy by [vercel](https://vercel.com/).
+HackerNews clone built with Next.js, Deployed by [vercel](https://vercel.com/).
 
 <p align="center">
   <a href="https://hacker-news.vercel.kuangpf.com/top" target="_blank">
