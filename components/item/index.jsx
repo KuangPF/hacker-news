@@ -1,5 +1,6 @@
 // item
 import { timeAgo, getHost } from 'utils'
+import Link from 'next/link'
 
 const Item = props => {
   const { item = {} } = props
@@ -17,7 +18,11 @@ const Item = props => {
         <span className="text-gray-500 text-sm">
           <span>
             by
-            <a className="underline cursor-pointer hover:text-hacker-news-base transition-all ease-in duration-100">{item.by}</a>
+            <Link href={`/user/${item.by}`}>
+              <span className="ml-1 underline cursor-pointer hover:text-hacker-news-base transition-all ease-in duration-100">
+                {item.by}
+              </span>
+            </Link>
           </span>
           <span className="ml-2">{`${timeAgo(item.time)} ago`}</span>
           <span className="ml-2">
