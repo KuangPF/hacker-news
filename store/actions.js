@@ -1,4 +1,4 @@
-import { fetchIdsByType, fetchItems } from 'api'
+import { fetchIdsByType, fetchItems, fetchUser } from 'api'
 import * as types from './types'
 
 const itemsPerPage = 20
@@ -57,4 +57,14 @@ export const fetchListData = (newsType, page) => dispatch => {
         payload: false
       })
     })
+}
+
+// get user info
+export const fetchUserData = id => dispatch => {
+  return fetchUser(id).then(user =>
+    dispatch({
+      type: types.SET_USER,
+      payload: { user, id }
+    })
+  )
 }

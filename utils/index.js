@@ -13,6 +13,9 @@ function pluralize(time, label) {
 }
 
 export function timeAgo(time) {
+  if (!time) {
+    return '--'
+  }
   const between = Date.now() / 1000 - Number(time)
   let timeAgoText = ''
   if (between < 3600) {

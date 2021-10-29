@@ -51,11 +51,24 @@ const apiLoadingReducer = (state = null, { type, payload = false }) => {
   }
 }
 
+const usersReducer = (state = {}, { type, payload: { id, user } = {} }) => {
+  const _state = cloneDeep(state)
+  switch (type) {
+    case types.SET_USER:
+      _state[id] = user
+      return _state
+
+    default:
+      return state
+  }
+}
+
 const reducers = {
   items: itemsReducer,
   ids: fetchIdsByTypeReducer,
   activeType: activeTypeReducer,
-  apiLoading: apiLoadingReducer
+  apiLoading: apiLoadingReducer,
+  users: usersReducer
 }
 
 export default combineReducers(reducers)
