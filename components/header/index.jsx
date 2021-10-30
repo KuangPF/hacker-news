@@ -28,6 +28,9 @@ const CommonHeader = props => {
         <Link href="/job">
           <a className={getLinkClass('/job')}>Jobs</a>
         </Link>
+        <a className="float-right text-white text-opacity-80 text-sm" href="https://hacker-news.vercel.kuangpf.com/top" target="_blank" rel="noreferrer">
+          Built with Next.js
+        </a>
       </nav>
     </header>
   )
