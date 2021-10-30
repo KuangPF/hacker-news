@@ -61,10 +61,21 @@ export const fetchListData = (newsType, page) => dispatch => {
 
 // get user info
 export const fetchUserData = id => dispatch => {
-  return fetchUser(id).then(user =>
-    dispatch({
-      type: types.SET_USER,
-      payload: { user, id }
-    })
-  )
+  dispatch({
+    type: types.SET_API_LOADING,
+    payload: true
+  })
+  return fetchUser(id)
+    .then(user =>
+      dispatch({
+        type: types.SET_USER,
+        payload: { user, id }
+      })
+    )
+    .then(() =>
+      dispatch({
+        type: types.SET_API_LOADING,
+        payload: false
+      })
+    )
 }
