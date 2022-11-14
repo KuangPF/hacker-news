@@ -10,9 +10,6 @@ HackerNews clone built with Next.js, Deployed by [vercel](https://vercel.com/).
   </a>
 </p>
 
-### status
-
-WIP
 
 ### License
 
