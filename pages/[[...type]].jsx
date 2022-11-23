@@ -41,8 +41,8 @@ export default function Home() {
   return (
     <div>
       <CommonHeader pathname={`/${type.join('/')}`} />
-      <div className="news-view relative max-w-screen-md mt-0 mb-0 mr-auto ml-auto pt-11">
-        <div className="news-list-nav fixed z-10 top-14 left-0 right-0 px-8 py-3.5 bg-white text-center text-sm shadow">
+      <div className="news-view relative max-w-screen-md mt-0 mb-0 mr-auto ml-auto">
+        <div className="news-list-nav hidden fixed z-10 top-14 left-0 right-0 px-8 py-3.5 bg-white text-center text-sm shadow">
           {/* <Link href="/">
             <a className="mx-4">&lt; prev</a>
           </Link>
@@ -56,7 +56,7 @@ export default function Home() {
             <Loading />
           </div>
         ) : (
-          <div className="new-list absolute my-8 w-full bg-white rounded">
+          <div className="new-list my-8 w-full bg-white rounded">
             {displayedItems.map(item => (
               <Item item={item} key={item.id} />
             ))}
